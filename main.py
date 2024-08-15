@@ -1,5 +1,3 @@
-from typing import Optional
-from pydantic import BaseModel
 from fastapi import FastAPI
 
 from data_loader import (
@@ -8,13 +6,6 @@ from data_loader import (
 
 
 app = FastAPI()
-
-
-class Opportunity(BaseModel):
-    country: Optional[str] = None
-    browser: Optional[str] = None
-    platform: Optional[str] = None
-    vertical: Optional[str] = None
 
 
 @app.get("/opportunities")
